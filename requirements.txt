@@ -1,0 +1,10 @@
+torch
+torchvision
+numpy
+scikit-image
+cv2
+opencv-python
+matplotlib
+gluoncv
+logging
+mxnet
