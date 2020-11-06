@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file, jsonify
 from cropper import Cropper
 
 cropper_util = Cropper()
@@ -15,10 +15,16 @@ def crop_image():
         if res_img:
             return send_file(res_img, mimetype='image/png')
         else:
-            return 400
+            raise InternalError('bad request/internal error', status_code=400)
     except Exception as e:
         print(e)
-        return 400
+        raise InternalError('bad request/internal error', status_code=400)
+
+@app.errorhandler(InternalError)
+def handle_internal_error(error):
+    response = jsonify(error.to_dict())
+    response.status_code = error.status_code
+    return response
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')
