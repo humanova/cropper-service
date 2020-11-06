@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, send_file
 from cropper import Cropper
 
 cropper_util = Cropper()
@@ -15,10 +15,10 @@ def crop_image():
         if res_img:
             return send_file(res_img, mimetype='image/png')
         else:
-            return jsonify(dict(success=False))
+            return 400
     except Exception as e:
         print(e)
-        return jsonify(dict(success=False))
+        return 400
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')
