@@ -1,3 +1,6 @@
 /models
 .idea
 __pycache__
+*.jpg
+*.png
+/cropped_imgs
