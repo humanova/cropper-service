@@ -15,16 +15,10 @@ def crop_image():
         if res_img:
             return send_file(res_img, mimetype='image/png')
         else:
-            raise InternalError('bad request/internal error', status_code=400)
+            return "bad request/internal error", 400
     except Exception as e:
         print(e)
-        raise InternalError('bad request/internal error', status_code=400)
-
-@app.errorhandler(InternalError)
-def handle_internal_error(error):
-    response = jsonify(error.to_dict())
-    response.status_code = error.status_code
-    return response
+        return "bad request/internal error", 400
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')
