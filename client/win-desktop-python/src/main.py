@@ -32,14 +32,15 @@ class CropperClient:
         content = { "img": image_data,
                     "settings": { "is_url": False,
                                   "preprocessing": False, 
-                                  "postprocessing": True,
+                                  "postprocessing": False,
                                   "model": "u2net"} }
                                  
         print("sending request...")
+        start_time = time.time()
         try:
             r = requests.post(f"{self.api_url}/cropping-api/crop", timeout=30.0, json=content)
             if r.status_code == 200:
-                print("[+] successful response")
+                print(f"[+] successful response : response time {round(time.time()-start_time,3)}")
                 res_image = Image.open(BytesIO(r.content))
                 self.save_cropped_image(img_data=res_image)
             else:
@@ -64,5 +65,5 @@ class CropperClient:
         
 
 if __name__ == "__main__":
-    c = CropperClient(api_url="http://127.0.0.1:5000", shortcut="alt+x", path="path/to/cropped_images")
+    c = CropperClient(api_url="http://127.0.0.1:5000", shortcut="alt+x", path="C:/Users/msi/Projects/cropper/cropper-service/client/win-desktop-python/cropped_imgs")
     c.start()
