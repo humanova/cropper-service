@@ -1,7 +1,7 @@
 # (c) 2020 Emir Erbasan (humanova)
 # Apache2 License, see LICENSE for more details
 
-from flask import Flask, request, send_file, jsonify
+from flask import Flask, request, send_file
 from cropper import Cropper
 
 cropper_util = Cropper()
@@ -11,7 +11,6 @@ app = Flask("cropper-service", template_folder="src/templates")
 @app.route('/cropping-api/crop', methods=['POST'])
 def crop_image():
     settings = request.json["settings"]
-    is_url = settings['is_url']
     try:
         image_data = request.json["img"]
         res_img = cropper_util.process(image_data=image_data, settings=settings)
