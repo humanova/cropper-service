@@ -1,3 +1,6 @@
+# (c) 2020 Emir Erbasan (humanova)
+# Apache2 License, see LICENSE for more details
+
 from PIL import Image
 import io
 import base64

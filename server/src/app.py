@@ -1,3 +1,6 @@
+# (c) 2020 Emir Erbasan (humanova)
+# Apache2 License, see LICENSE for more details
+
 from flask import Flask, request, send_file, jsonify
 from cropper import Cropper
 

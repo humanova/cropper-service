@@ -1,3 +1,6 @@
+# (c) 2020 Emir Erbasan (humanova)
+# Apache2 License, see LICENSE for more details
+
 import io
 import utils
 from models.postprocessing import RemovingTooTransparentBordersHardAndBlurringHardBorders

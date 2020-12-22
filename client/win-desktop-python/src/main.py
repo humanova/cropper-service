@@ -1,3 +1,6 @@
+# (c) 2020 Emir Erbasan (humanova)
+# Apache2 License, see LICENSE for more details
+
 import keyboard
 from PIL import ImageGrab, Image
 import win32clipboard as cb
@@ -65,5 +68,5 @@ class CropperClient:
         
 
 if __name__ == "__main__":
-    c = CropperClient(api_url="http://127.0.0.1:5000", shortcut="alt+x", path="C:/Users/msi/Projects/cropper/cropper-service/client/win-desktop-python/cropped_imgs")
+    c = CropperClient(api_url="http://bruh.uno:5010", shortcut="alt+x", path="C:/Users/msi/Projects/cropper/cropper-service/client/win-desktop-python/cropped_imgs")
     c.start()
