@@ -9,7 +9,7 @@ Saliency-based image cropping service.
 
 - [Kroppa browser extension](https://github.com/humanova/kroppa-extension)
 
-## Application demo
+## Mobile Application demo
 
 ![App-demo](media/app-demo.gif)
 
