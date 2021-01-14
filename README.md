@@ -1,6 +1,7 @@
 # Cropper service
 
 Saliency-based image cropping service.
+- [Project Paper](https://drive.google.com/file/d/1cdp-Q0OQPNX2soNuFm9tPey4IQ1fT7JS/view?usp=sharing)
 
 ## Sample clients
 
